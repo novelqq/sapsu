@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvtajkj4ku174"]
+
+[ext_resource type="PackedScene" uid="uid://c2rmaai2wxmta" path="res://player.tscn" id="1_6gpos"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ol7q7"]
+albedo_color = Color(0.517647, 0.517647, 0.521569, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+use_collision = true
+size = Vector3(56.6567, 1, 51.6007)
+material = SubResource("StandardMaterial3D_ol7q7")
+
+[node name="3DGodotRobot" parent="." instance=ExtResource("1_6gpos")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.676106, 0)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00526, -6.59675)
+use_collision = true
+size = Vector3(7.856, 1, 8.55145)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.16341, 1.8194, -6.59675)
+use_collision = true
+size = Vector3(4.88797, 1, 4.08165)

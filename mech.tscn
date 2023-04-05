@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dix78karj18ik"]
+
+[ext_resource type="PackedScene" uid="uid://dnwflrxyo7x3m" path="res://mech.gltf" id="1_tanos"]
+
+[node name="mech" instance=ExtResource("1_tanos")]

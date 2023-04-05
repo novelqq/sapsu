@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://pgr0f2uyea3u"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_yfuo4"]
+[ext_resource type="PackedScene" uid="uid://bgieah12r2vqg" path="res://playerModel.tscn" id="2_edpye"]
+[ext_resource type="Texture2D" uid="uid://b63e4h23wxmqv" path="res://crosshair.png" id="2_sxowi"]
+[ext_resource type="Script" path="res://crosshair.gd" id="3_m47ja"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xkbfb"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_hlek7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fnmt6"]
+size = Vector3(10.5116, 6.66106, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Player" type="CharacterBody3D" parent="."]
+script = ExtResource("1_yfuo4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("CapsuleShape3D_xkbfb")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Player"]
+visible = false
+mesh = SubResource("CapsuleMesh_hlek7")
+
+[node name="MeshInstance3D" parent="Player" instance=ExtResource("2_edpye")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.757792, -0.0968561)
+
+[node name="PlayerArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerArea"]
+shape = SubResource("BoxShape3D_fnmt6")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.8359)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.26, 0, 0, 0, 0.26, 0, 0, 0, 0.26, 0, 0, 3.10863)
+texture = ExtResource("2_sxowi")
+script = ExtResource("3_m47ja")
